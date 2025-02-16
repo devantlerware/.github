@@ -3,11 +3,7 @@ name: GitOps Lint
 on:
   workflow_call:
   pull_request:
-    branches:
-      - main
   pull_request_target:
-    branches:
-      - main
   merge_group:
 
 concurrency:
