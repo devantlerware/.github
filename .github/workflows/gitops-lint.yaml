@@ -1,0 +1,26 @@
+name: GitOps Lint
+
+on:
+  pull_request:
+    branches: [main]
+  merge_group:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gitops-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📑 Checkout
+        uses: actions/checkout@v4
+      - name: ⚙️ Install KSail
+        run: |
+          curl -L -o ksail https://github.com/devantler/ksail/releases/download/latest/ksail-linux-arm64
+          chmod +x ksail
+          sudo mv ksail /usr/local/bin/ksail
+      - name: 🧹 Lint GitOps cluster configuration
+        run: |
+          ksail lint
