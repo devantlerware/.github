@@ -1,0 +1,13 @@
+name: Publish image to GitHub Container Registry and Docker Hub
+
+on:
+  workflow_call:
+  pull_request:
+  merge_group:
+
+jobs:
+  publish-ghcr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📑 Checkout
+        uses: actions/checkout@v4
