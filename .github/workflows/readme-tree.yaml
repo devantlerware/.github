@@ -30,7 +30,7 @@ jobs:
         id: create-pull-request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: "update-readme-tree"
+          branch: update-readme-tree
           title: "chore: Update README Tree"
           commit-message: "chore: Update README Tree"
           body: This PR updates the README Tree.
@@ -40,6 +40,6 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
       - name: Enable Pull Request Automerge
         if: steps.create-pull-request.outputs.pull-request-operation != 'none'
-        run: gh pr merge --merge --auto ${{ steps.create-pull-request.outputs.pull-request-number }}
+        run: gh pr merge --auto --squash ${{ steps.create-pull-request.outputs.pull-request-number }}
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
