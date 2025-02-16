@@ -1,0 +1,4 @@
+- name: notify-release
+  color: '808080'
+- name: blocked
+  color: 'd93f0b'
