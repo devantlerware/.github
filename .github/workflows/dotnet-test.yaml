@@ -1,0 +1,17 @@
+name: Test .NET solution or project
+on:
+  workflow_call:
+    secrets:
+      NUGET_API_KEY:
+        required: true
+  pull_request:
+  merge_group:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📑 Checkout
+        uses: actions/checkout@v4
+      - name: 🧪 Test
+        run: dotnet test
