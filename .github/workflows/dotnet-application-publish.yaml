@@ -1,5 +1,6 @@
 name: Publish .NET Application to GitHub Releases and Homebrew Taps
 on:
+  workflow_dispatch:
   workflow_call:
     secrets:
       NUGET_API_KEY:

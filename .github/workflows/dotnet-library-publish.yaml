@@ -1,5 +1,6 @@
 name: Publish .NET library to NuGet and GitHub Packages
 on:
+  workflow_dispatch:
   workflow_call:
     secrets:
       NUGET_API_KEY:

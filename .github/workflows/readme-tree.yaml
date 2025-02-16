@@ -1,6 +1,7 @@
 name: Readme Tree
 
 on:
+  workflow_dispatch:
   workflow_call:
     secrets:
       APP_PRIVATE_KEY:
