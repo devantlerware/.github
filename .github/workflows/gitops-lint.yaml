@@ -2,6 +2,12 @@ name: GitOps Lint
 
 on:
   workflow_call:
+  pull_request:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
