@@ -32,6 +32,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: npx semantic-release --branches main
