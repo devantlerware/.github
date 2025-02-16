@@ -44,6 +44,7 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Auto Approve Pull Request
         uses: hmarr/auto-approve-action@v4
+        if: steps.create-pull-request.outputs.pull-request-operation != 'none'
         with:
           github-token: ${{ steps.app-token.outputs.token }}
           pull-request-number: ${{ steps.create-pull-request.outputs.pull-request-number }}
