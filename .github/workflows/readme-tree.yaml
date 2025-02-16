@@ -35,11 +35,10 @@ jobs:
         id: create-pull-request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: update-readme-tree
-          commit-message: Update README Tree
-          title: Update README Tree
+          branch: "chore/update-readme-tree"
+          title: "chore: Update README Tree"
+          commit-message: "chore: Update README Tree"
           body: This PR includes new updates to the README Tree.
-          labels: chore
           delete-branch: true
           signoff: true
           token: ${{ steps.app-token.outputs.token }}
