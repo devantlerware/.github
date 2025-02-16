@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       - name: ⚙️ Install KSail
         run: |
-          curl -L -o ksail https://github.com/devantler/ksail/releases/download/latest/ksail-linux-arm64
+          curl -L -o ksail https://github.com/devantler-tech/ksail/releases/download/latest/ksail-linux-arm64
           chmod +x ksail
           sudo mv ksail /usr/local/bin/ksail
       - name: 🧹 Lint GitOps cluster configuration
