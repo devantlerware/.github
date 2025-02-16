@@ -37,6 +37,7 @@ jobs:
           title: "chore: Update README Tree"
           commit-message: "chore: Update README Tree"
           body: This PR updates the README Tree.
+          assignees: devantler
           signoff: true
           sign-commits: true
           delete-branch: true
