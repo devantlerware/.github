@@ -38,10 +38,6 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-      - name: Auto Approve Pull Request
-        uses: hmarr/auto-approve-action@v4
-        with:
-          github-token: ${{ steps.app-token.outputs.token }}
       - name: Enable Pull Request Automerge
         if: steps.create-pull-request.outputs.pull-request-operation != 'none'
         run: gh pr merge --auto --squash ${{ steps.create-pull-request.outputs.pull-request-number }}
