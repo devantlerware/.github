@@ -4,6 +4,8 @@ on:
     secrets:
       NUGET_API_KEY:
         required: true
+      CODECOV_TOKEN:
+        required: true
   pull_request:
   merge_group:
 
