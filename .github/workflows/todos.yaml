@@ -1,6 +1,9 @@
 name: "TODOs"
 on:
   workflow_call:
+    secrets:
+      app-private-key:
+        required: true
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
