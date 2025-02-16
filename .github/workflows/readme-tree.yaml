@@ -35,7 +35,7 @@ jobs:
         id: create-pull-request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: "chore/update-readme-tree"
+          branch: "update-readme-tree"
           title: "chore: Update README Tree"
           commit-message: "chore: Update README Tree"
           body: This PR includes new updates to the README Tree.
