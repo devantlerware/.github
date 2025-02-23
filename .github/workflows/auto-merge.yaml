@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]' || github.actor == 'botantler-tech[bot]'
     steps:
+      - name: 📑 Checkout
+        uses: actions/checkout@v4
       - name: ✅ Approve pull request
         uses: hmarr/auto-approve-action@v4
         with:
